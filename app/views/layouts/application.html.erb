@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LoL</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+
+
+    <div class="container">
+      <div id="login_container">
+    </div>
+
+<% if user_signed_in? %>
+  <div class="container" >
+    <div class="pull-right">
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-danger' %>
+    </div>
+  </div>
+  <% end %>
+
+
+  <div class="button">
+
+      <%= button_to "Champs", "welcome/champs", :method => "get" %>
+
+  </div>
+
+
+  <div class="button">
+
+      <%= button_to "Fav", "welcome/fav", :method => "get" %>
+
+  </div>
+
+  <div class="button">
+
+      <%= button_to "welcome", "welcome", :method => "get" %>
+
+  </div>
+
+
+
+
+
+    <%= yield %>
+  </body>
+</html>
